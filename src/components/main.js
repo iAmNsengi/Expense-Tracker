@@ -14,7 +14,7 @@ function main() {
             price: formData.get('price'),
             date: new Date().toJSON().slice(0, 10),
         }
-        storageData.push(data)
+        storageData.unshift(data)
         localStorage.setItem('trackerData', JSON.stringify(storageData))
         setTrackerItems()
         trackerForm.reset()
@@ -90,9 +90,8 @@ function getJoke() {
                 } else {
                     joke = 'No joke found!';
                 }
-                document.querySelector('.joke').innerHTML = `"${joke}"`;
+                document.querySelector('.joke').innerHTML = `<p>"${joke}"</p>`;
             })
             .catch(error => console.error('Error fetching joke:', error));
     }, 7000);
-
 }
