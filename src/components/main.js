@@ -2,7 +2,6 @@ let storageData = [];
 localStorage.getItem('trackerData') ? storageData = JSON.parse(localStorage.getItem('trackerData')) : localStorage.setItem('trackerData', JSON.stringify([]))
 
 function main() {
-    const tBody = document.querySelector('#tableBody')
     setTrackerItems()
     const trackerForm = document.querySelector('#trackerForm')
     trackerForm.addEventListener('submit', (e) => {
@@ -18,7 +17,9 @@ function main() {
         setTrackerItems()
         trackerForm.reset()
     })
-
+    setInterval(() => {
+        document.querySelector('.time').innerHTML = `<p class="text-2xl font-bold"> ${new Date().toLocaleTimeString()}</p>`
+    }, 1000)
 }
 
 
@@ -36,7 +37,7 @@ function setTrackerItems() {
                 <td class="px-6 py-4">${item.price}</td>
                 <td class="px-6 py-4">${item.date}</td>
                 <td class="px-6 py-4">
-                    <a class="text-red-500 delete-btn cursor-pointer" data-id="${storageData[counter-1]}">Delete</a>
+                    <a class="text-red-500 delete-btn cursor-pointer" data-id="${storageData[counter - 1]}">Delete</a>
                 </td>
             </tr>`;
             counter++
