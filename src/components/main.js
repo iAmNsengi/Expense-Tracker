@@ -3,6 +3,7 @@ localStorage.getItem('trackerData') ? storageData = JSON.parse(localStorage.getI
 
 function main() {
     setTrackerItems()
+    getJoke()
     const trackerForm = document.querySelector('#trackerForm')
     trackerForm.addEventListener('submit', (e) => {
         e.preventDefault();
@@ -57,4 +58,24 @@ function deleteItem(id) {
     console.log(storageData)
     localStorage.setItem('trackerData', JSON.stringify(storageData));
     setTrackerItems();
+}
+
+function getJoke() {
+    setInterval(() => {
+        fetch('https://v2.jokeapi.dev/joke/Any')
+            .then(response => response.json())
+            .then(data => {
+                let joke = '';
+                if (data.type === 'single') {
+                    joke = data.joke;
+                } else if (data.type === 'twopart') {
+                    joke = `${data.setup} ... ${data.delivery}`;
+                } else {
+                    joke = 'No joke found!';
+                }
+                document.querySelector('.joke').innerHTML = `"${joke}"`;
+            })
+            .catch(error => console.error('Error fetching joke:', error));
+    }, 7000);
+
 }
