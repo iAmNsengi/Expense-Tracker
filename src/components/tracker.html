@@ -4,10 +4,10 @@
   <div class="relative overflow-x-auto">
     <form
       id="trackerForm"
-      class="bg-white border-b dark:bg-gray-800 dark:border-gray-700 flex justify-center items-center gap-3 py-2 pb-5"
+      class="bg-white w-screen border-b dark:bg-gray-800 dark:border-gray-700 flex flex-col md:flex-row justify-center items-center gap-3 py-2 pb-5"
     >
       <input
-        class="px-6 py-2 font-medium text-gray-900 outline-none w-2/3 border border-gray-600 rounded-lg t"
+        class="px-6 py-2 font-medium text-gray-900 outline-none w-1/2 border border-gray-600 rounded-lg t"
         placeholder="Expense name..."
         name="expense"
         required
@@ -16,7 +16,7 @@
         type="number"
         name="price"
         id=""
-        placeholder="$0.00"
+        placeholder="0.00Frw"
         class="text-right px-6 py-2 rounded-lg"
         required
       />
@@ -28,7 +28,7 @@
       </button>
     </form>
     <table
-      class="w-full text-sm text-left rtl:text-right text-gray-500 dark:text-gray-400"
+      class="w-full text-sm my-2 text-left rtl:text-right text-gray-500 dark:text-gray-400"
     >
       <thead
         class="text-xs text-gray-700 uppercase bg-gray-50 dark:bg-gray-700 dark:text-gray-400"

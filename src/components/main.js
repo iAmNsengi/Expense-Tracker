@@ -26,9 +26,9 @@ function main() {
 
 function setTrackerItems() {
     const tBody = document.querySelector('#tableBody')
-    let counter = 0;
     tBody.innerHTML = ""
     if (JSON.parse(localStorage.getItem('trackerData'))) {
+        let counter = 0;
         for (item of storageData) {
             tBody.innerHTML +=
                 `<tr class="bg-white border-b dark:bg-gray-800 dark:border-gray-700">
@@ -38,7 +38,7 @@ function setTrackerItems() {
                 <td class="px-6 py-4">${item.price}</td>
                 <td class="px-6 py-4">${item.date}</td>
                 <td class="px-6 py-4">
-                    <a class="text-red-500 delete-btn cursor-pointer" data-id="${storageData[counter - 1]}">Delete</a>
+                    <a class="text-red-500 delete-btn cursor-pointer" data-id="${counter}">Delete</a>
                 </td>
             </tr>`;
             counter++
