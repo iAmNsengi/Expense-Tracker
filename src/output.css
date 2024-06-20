@@ -1061,6 +1061,10 @@ input:checked + .toggle-bg {
   position: relative;
 }
 
+.sticky {
+  position: sticky;
+}
+
 .inset-0 {
   inset: 0px;
 }
@@ -1092,6 +1096,10 @@ input:checked + .toggle-bg {
 
 .start-0 {
   inset-inline-start: 0px;
+}
+
+.-top-10 {
+  top: -2.5rem;
 }
 
 .z-10 {
@@ -1986,6 +1994,12 @@ input:checked + .toggle-bg {
   .md\:dark\:hover\:text-blue-500:hover:is(.dark *) {
     --tw-text-opacity: 1;
     color: rgb(63 131 248 / var(--tw-text-opacity));
+  }
+}
+
+@media (min-width: 1024px) {
+  .lg\:mt-0 {
+    margin-top: 0px;
   }
 }
 
